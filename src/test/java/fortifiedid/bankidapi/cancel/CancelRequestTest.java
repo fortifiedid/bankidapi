@@ -1,37 +1,19 @@
 package fortifiedid.bankidapi.cancel;
 
-import fortifiedid.bankidapi.cancel.CancelRequest;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-
-public class CancelRequestTest
-{
-    @Test
-    public void testEmptyJson() throws Exception
-    {
-        final String JSON = "{}";
-
-        CancelRequest request = CancelRequest.parseJson(JSON.getBytes());
-        assertEquals(null,request.orderRef);
-
-        String json = request.toJson();
-        request = CancelRequest.parseJson(json.getBytes());
-
-        assertEquals(null,request.orderRef);
-    }
+public class CancelRequestTest {
 
     @Test
-    public void testJson() throws Exception
-    {
-        final String JSON = "{\"orderRef\" : \"ref123\"}";
+    public void testEmptyJson() throws Exception {
+        CancelRequest request = new CancelRequest("123445");
 
-        CancelRequest request = CancelRequest.parseJson(JSON.getBytes());
-        assertEquals("ref123",request.orderRef);
+        
+        assertTrue(new String(request.toByte()).equalsIgnoreCase("{\"orderRef\":\"123445\"}"));
+        
+        
 
-        String json = request.toJson();
-        request = CancelRequest.parseJson(json.getBytes());
-
-        assertEquals("ref123",request.orderRef);
     }
+
 }

@@ -34,7 +34,7 @@
         <repository>
             <id>releases</id>
             <name>Jfrog - snapshots</name>
-            <url>https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-relese-local/</url>
+            <url>https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-release-local</url>
         </repository>
     </distributionManagement>
     <dependencies>

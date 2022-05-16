@@ -11,22 +11,6 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
     
-    
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>https://repo1.maven.org/maven2</url>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>snapshots</id>
-            <name>Jfrog - snapshots</name>
-            <url>https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-snapshot-local/</url>
-        </repository>
-    </distributionManagement>
-    
     <name>BankID-API</name>
     <dependencies>
         <dependency>
@@ -42,13 +26,13 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.13.2</version>
+            <version>2.13.2.1</version>
         </dependency>
         <!-- junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

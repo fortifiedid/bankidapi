@@ -12,6 +12,31 @@
     </properties>
     
     <name>BankID-API</name>
+    <repositories>
+        <repository>
+            <id>snapshots</id>
+            <name>Jfrog - snapshots</name>
+            <url>https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-snapshot-local/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>releases</id>
+            <name>Jfrog - releases</name>
+            <url>https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-release-local/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Jfrog - snapshots</name>
+            <url>https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-relese-local/</url>
+        </repository>
+    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

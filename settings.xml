@@ -8,13 +8,13 @@
     <servers>
         <server>
             <id>releases</id>
-            <username>${ARTIFACTORY_USERNAME_EXT}</username>
-            <password>${ARTIFACTORY_PASSWORD_EXT}</password>
+            <username>${ARTIFACTORY_USERNAME}</username>
+            <password>${ARTIFACTORY_PASSWORD}</password>
         </server>
         <server>
             <id>snapshots</id>
-            <username>${ARTIFACTORY_USERNAME_EXT}</username>
-            <password>${ARTIFACTORY_PASSWORD_EXT}</password>
+            <username>${ARTIFACTORY_USERNAME}</username>
+            <password>${ARTIFACTORY_PASSWORD}</password>
         </server>
     </servers>
     <profiles>

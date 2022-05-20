@@ -6,7 +6,7 @@ MASTER="main"
 RELEASE="release"
 MAVEN_CONFIG=".mvn/maven.config"
 LOCAL_RELEASE=
-RELEASE_CMD="mvn clean deploy"
+RELEASE_CMD="mvn clean deploy -DaltDeploymentRepository=releases::default::https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-release-local"
 
 awsLogin() {
   aws ecr get-login-password --region eu-central-1 | docker login --username "$AWS_USERNAME" --password-stdin "$AWS_ACCOUNT"

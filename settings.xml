@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Settings for GitHub Actions -->
+
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd"
+          xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <servers>
+        <server>
+            <id>releases</id>
+            <username>${ARTIFACTORY_USERNAME}</username>
+            <password>${ARTIFACTORY_PASSWORD}</password>
+        </server>
+        <server>
+            <id>snapshots</id>
+            <username>${ARTIFACTORY_USERNAME}</username>
+            <password>${ARTIFACTORY_PASSWORD}</password>
+        </server>
+    </servers>
+    <profiles>
+        <profile>
+            <id>artifactory</id>
+            <repositories>
+                <repository>
+                    <id>snapshots</id>
+                    <name>Jfrog - snapshots</name>
+                    <url>https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-snapshot-local/</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>releases</id>
+                    <name>Jfrog - releases</name>
+                    <url>https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-release-local/</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>artifactory</activeProfile>
+    </activeProfiles>
+</settings>

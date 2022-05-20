@@ -22,7 +22,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn --batch-mode --settings settings.xml deploy
+      run: mvn --batch-mode --settings settings.xml deploy -DaltDeploymentRepository=snapshots::default::https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-snapshot-local/
       env:
         ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD_EXT }}
         ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME_EXT }}

@@ -12,36 +12,16 @@
     </properties>
     
     <name>BankID-API</name>
-    <repositories>
-        <repository>
-            <id>snapshots</id>
-            <name>Jfrog - snapshots</name>
-            <url>https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-snapshot-local/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>releases</id>
-            <name>Jfrog - releases</name>
-            <url>https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-release-local/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    <distributionManagement>
-        <repository>
-            <id>snapshots</id>
-            <name>Jfrog - snapshots</name>
-            <url>https://fortifiedid.jfrog.io/artifactory/default-fortifiedid-libs-snapshot-local</url>
-        </repository>
-    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
             <version>2.13.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15to18</artifactId>
+            <version>1.71</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

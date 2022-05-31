@@ -4,7 +4,9 @@
  */
 package fortifiedid.bankidapi.util;
 
-import java.nio.ByteBuffer;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import org.bouncycastle.crypto.digests.SHA256Digest;
 import org.bouncycastle.crypto.macs.HMac;
@@ -31,6 +33,23 @@ public class QrAuthCode {
             hMac.doFinal(hmacOut, 0);
 
             return Hex.toHexString(hmacOut);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public static String qrCodeData(String qrStartToken, String startSecret, String time) {
+
+        try {
+            Mac mac = Mac.getInstance("HmacSHA256");
+            mac.init(new SecretKeySpec(startSecret.getBytes(StandardCharsets.US_ASCII), "HmacSHA256"));
+            mac.update(time.getBytes(StandardCharsets.US_ASCII));
+
+            String authCode = String.format("%064x", new BigInteger(1, mac.doFinal()));
+
+            return String.join(".", "bankid", qrStartToken, time, authCode);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
